@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body{font-size: 100px; font-family: monospace }</style>
+</head>
+<body>
+<script>
+        function showShadow( length, stop, direction ){
+    if(direction =="left"){
+        for(var x = 1; x <= 10; x++){
+        if( x == stop ){
+            document.write( '|' )
+        }else if( x > stop && x <= stop + length ){
+            document.write('\\')
+        }else{
+            document.write('_')
+        }
+        }
+        document.write("\n")
+    }
+    
+    if(direction == "right"){
+        for( var y = 1; y <= 10; y++){
+        if( y == stop){
+            document.write( '|' )
+        } else if( y < stop && y >= stop - length ){
+            document.write('/')
+        } else{
+            document.write('_')
+        }
+        }
+        document.write("\n")
+    }
+}
+showShadow(3, 7, "right"); //пример 3
+</script>
+</body>
+</html> 
