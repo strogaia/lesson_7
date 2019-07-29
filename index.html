@@ -5,34 +5,20 @@
 </head>
 <body>
 <script>
-        function showShadow( length, stop, direction ){
-    if(direction =="left"){
+    function showShadow( length, stop, direction ){
         for(var x = 1; x <= 10; x++){
         if( x == stop ){
             document.write( '|' )
-        }else if( x > stop && x <= stop + length ){
+        }else if( x > stop && x <= stop + length && direction =="left" ){
             document.write('\\')
+        }else if( x < stop && x >= stop - length && direction =="right"){
+            document.write('/')
         }else{
             document.write('_')
         }
-        }
-        document.write("\n")
-    }
-    
-    if(direction == "right"){
-        for( var y = 1; y <= 10; y++){
-        if( y == stop){
-            document.write( '|' )
-        } else if( y < stop && y >= stop - length ){
-            document.write('/')
-        } else{
-            document.write('_')
-        }
-        }
-        document.write("\n")
-    }
-}
-showShadow(3, 7, "right"); //пример 3
+      }
+   }
+    showShadow(3, 7, "right"); //пример 3
 </script>
 </body>
 </html> 
